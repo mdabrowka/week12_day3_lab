@@ -2,14 +2,7 @@ let countries = []
 
 const app = function () {
 
-
    const url = 'https://restcountries.eu/rest/v2/all';
-   // makeRequest(url, requestComplete);
-
-  // const countriesButton = document.querySelector('#get-countries');
-  // countriesButton.addEventListener('click', function () {
-  //   makeRequest(url, requestComplete);
-  // });
 
   const countriesInfo = document.querySelector('#countries-dropdown');
   countriesInfo.addEventListener('click', function () {
@@ -24,11 +17,8 @@ const app = function () {
     displayCountryInfo(singleCountry);
     // console.log(this)
 
-
     const jsonString = JSON.stringify(singleCountry);
     localStorage.setItem('country', jsonString);
-
-
 });
 
   const jsonString = localStorage.getItem('country')
@@ -36,30 +26,6 @@ const app = function () {
   displayCountryInfo(country);
 
 }
-//THIS IS BAD
-// const dropdownSelect = function () {
-//   let name = getInputValue('#name');
-//   let population = getInputValue('#population');
-//   let capital = getInputValue('#capital');
-//
-//   let country = {
-//     name: name,
-//     population: population,
-//     capital: capital
-//   };
-//
-//   setDefinitionText('#name-display', country.name);
-//   setDefinitionText('#population-display', country.population);
-//   setDefinitionText('#capital-display', country.capital);
-//
-//   var jsonString = JSON.stringify(country);
-//   localStorage.setItem('country', jsonString);
-// }
-
-// const populateCountries = function() {
-//   const url = 'https://restcountries.eu/rest/v2/all';
-//   makeRequest(url, requestComplete);
-// }
 
 const makeRequest = function(url, callback) {
   const request = new XMLHttpRequest();
