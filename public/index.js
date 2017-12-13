@@ -18,6 +18,8 @@ const app = function () {
 
   const dropdown = document.querySelector('#countries-dropdown');
   dropdown.addEventListener('change', function () {
+    const ul = document.querySelector('#country-info');
+    ul.innerHTML = '';
     const singleCountry = countries[this.value];
     displayCountryInfo(singleCountry);
     // console.log(this)
