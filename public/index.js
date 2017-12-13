@@ -25,7 +25,7 @@ const app = function () {
     // console.log(this)
 
 
-    var jsonString = JSON.stringify(singleCountry);
+    const jsonString = JSON.stringify(singleCountry);
     localStorage.setItem('country', jsonString);
 
 
