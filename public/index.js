@@ -23,9 +23,38 @@ const app = function () {
     const singleCountry = countries[this.value];
     displayCountryInfo(singleCountry);
     // console.log(this)
+
+
+    var jsonString = JSON.stringify(singleCountry);
+    localStorage.setItem('country', jsonString);
+
+
 });
 
+  const jsonString = localStorage.getItem('country')
+  const country = JSON.parse(jsonString)
+  displayCountryInfo(country);
+
 }
+//THIS IS BAD
+// const dropdownSelect = function () {
+//   let name = getInputValue('#name');
+//   let population = getInputValue('#population');
+//   let capital = getInputValue('#capital');
+//
+//   let country = {
+//     name: name,
+//     population: population,
+//     capital: capital
+//   };
+//
+//   setDefinitionText('#name-display', country.name);
+//   setDefinitionText('#population-display', country.population);
+//   setDefinitionText('#capital-display', country.capital);
+//
+//   var jsonString = JSON.stringify(country);
+//   localStorage.setItem('country', jsonString);
+// }
 
 // const populateCountries = function() {
 //   const url = 'https://restcountries.eu/rest/v2/all';
